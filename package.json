@@ -1,0 +1,11 @@
+{
+  "name": "configm",
+  "version": "0.0.0",
+  "description": "module that handles config with directory inherit and global",
+  "main": "lib/configm.js",
+  "scripts": {
+    "test": "tap test"
+  },
+  "author": "bonuspunkt",
+  "license": "BSD"
+}
