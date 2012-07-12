@@ -1,11 +1,21 @@
 {
   "name": "configm",
   "version": "0.0.0",
-  "description": "module that handles config with directory inherit and global",
+  "description": "handle config with directory inherit and global",
   "main": "lib/configm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bonuspunkt/configm"
+  },
+  "bugs": {
+    "url": "http://github.com/bonuspunkt/configm/issues"
+  },
   "scripts": {
     "test": "tap test"
   },
   "author": "bonuspunkt",
-  "license": "BSD"
+  "license": "BSD",
+  "devDependencies": {
+    "tap": "~0.2.5"
+  }  
 }
