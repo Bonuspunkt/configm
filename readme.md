@@ -1,4 +1,4 @@
-# configm
+# configm [![Build Status](https://secure.travis-ci.org/bonuspunkt/configm.png)](http://travis-ci.org/bonuspunkt/configm)
 merging your config
 
 ## installation
@@ -31,4 +31,5 @@ gets the config. `dir` defaults to current working directory
             +-- sample.json
                 { c: 5, d: 6, e: 7 }
 will return
+
     {a:1, b:3, c:5, d:6, e:7}

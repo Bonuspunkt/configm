@@ -1,6 +1,6 @@
 {
   "name": "configm",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "handle config with directory inherit and global",
   "main": "lib/configm.js",
   "repository": {
