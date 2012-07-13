@@ -20,15 +20,15 @@ applies the keyvalue pair to the global directory
 gets the config. `dir` defaults to current working directory
 
     +-- HOME (global)
-    |   +-- sample.json
-    |       { a: 1, b: 2 }
-    |
+        +-- sample.json
+            { a: 1, b: 2, c: 3 }
+    
     +-- Parent
         +-- sample.json
-        |   { b: 3, c: 4 }
+        |   { b: 3, c: 4, d: 5 }
         |
         +-- workingDir
             +-- sample.json
-                { b: 4, d: 6 }
+                { c: 5, d: 6, e: 7 }
 will return
-    {a:1, b:4, c:4, d:6}
+    {a:1, b:3, c:5, d:6, e:7}
