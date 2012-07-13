@@ -1,4 +1,4 @@
-# configm [![Build Status](https://secure.travis-ci.org/bonuspunkt/configm.png)](http://travis-ci.org/bonuspunkt/configm)
+# configm [![Build Status](https://secure.travis-ci.org/Bonuspunkt/configm.png)](http://travis-ci.org/Bonuspunkt/configm)
 merging your config
 
 ## installation
