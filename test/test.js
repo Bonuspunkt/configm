@@ -13,6 +13,12 @@ try { fs.unlinkSync(path.join(global, cfgFile)); } catch(e) {}
 try { fs.unlinkSync(path.join(parent, cfgFile)); } catch(e) {}
 try { fs.unlinkSync(path.join(chdir, cfgFile)); } catch(e) {}
 
+// setup directories
+try { fs.mkdirSync(global); } catch(e) {}
+try { fs.mkdirSync(parent); } catch(e) {}
+try { fs.mkdirSync(chdir); } catch(e) {}
+
+// lets start
 var cfg = configm(cfgFile, global);
 
 test(function(t) {
