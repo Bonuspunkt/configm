@@ -8,6 +8,7 @@ var parent = path.join(__dirname, 'dir');
 var chdir = path.join(__dirname, 'dir', 'subdir');
 var cfgFile = '.test';
 
+// clear up last test run
 try { fs.unlinkSync(path.join(global, cfgFile)); } catch(e) {}
 try { fs.unlinkSync(path.join(parent, cfgFile)); } catch(e) {}
 try { fs.unlinkSync(path.join(chdir, cfgFile)); } catch(e) {}
@@ -29,7 +30,7 @@ test(function(t) {
 
           process.chdir(chdir);
 
-          cfg.set('d', 'e', function(e) {
+          cfg.set({ d: 'e' }, function(e) {
             cfg.get(function(e, data) {
               t.deepEqual(data, {a:'c', d:'e'});
               t.end();
