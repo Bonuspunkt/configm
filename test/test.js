@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var test = require('tap').test;
+var async = require('async');
 var configm = require('../lib/configm');
 
 var global = path.join(__dirname, 'global');
@@ -25,28 +26,34 @@ test(function(t) {
 
   process.chdir(parent);
 
-  cfg.set('a', 'b', 'g', function(e) {
-    cfg.get(function(e, data) {
-      
+  async.waterfall([
+    function(callback) { 
+      cfg.set('a', 'b', 'g', callback); 
+    },
+    function(callback) { 
+      cfg.get(callback);
+    },
+    function(data, callback) {
       t.deepEqual(data, {a:'b'});
 
-      cfg.set('a', 'c', function(e) {
-        cfg.get(function(e, data) {
-          t.deepEqual(data, {a:'c'});
+      cfg.set('a', 'c', callback);
+    },
+    function(callback) {
+      cfg.get(callback);
+    },
+    function(data, callback) {
+      t.deepEqual(data, {a:'c'});
 
-          process.chdir(chdir);
+      process.chdir(chdir);
 
-          cfg.set({ d: 'e' }, function(e) {
-            cfg.get(function(e, data) {
-              t.deepEqual(data, {a:'c', d:'e'});
-              t.end();
-            });
-          });
-
-        });
-      });
-
-    });
+      cfg.set({ d: 'e' }, callback);
+    },
+    function(callback) {
+      cfg.get(callback);
+    },
+  ], function(err, result) {
+    t.deepEqual(result, {a:'c', d:'e'});
+    t.end();
   });
 
 });
