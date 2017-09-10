@@ -16,7 +16,7 @@
   "author": "bonuspunkt",
   "license": "BSD",
   "devDependencies": {
-    "async": "~0.1.22",
-    "tap": "~0.2.5"
+    "async": "~2.5.0",
+    "tap": "~10.7.2"
   }
 }

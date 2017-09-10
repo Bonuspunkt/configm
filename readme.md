@@ -1,4 +1,6 @@
 # configm [![Build Status](https://secure.travis-ci.org/Bonuspunkt/configm.png)](http://travis-ci.org/Bonuspunkt/configm)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Bonuspunkt/configm.svg)](https://greenkeeper.io/)
 merging your config
 
 ## installation
